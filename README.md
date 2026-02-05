@@ -48,13 +48,13 @@ https://github.com/user-attachments/assets/e9fa1ae5-2094-4bee-9a82-e1814035e0c3
 First, install the package in your React project:
 
 ```bash
-npm install react-sponsor-banner
+npm install @sadhus/react-sponsor-banner
 ```
 
 or
 
 ```bash
-yarn add react-sponsor-banner
+yarn add @sadhus/react-sponsor-banner
 ```
 
 This component relies on `react`, `react-dom`, `@mui/material`, and `@emotion/styled` as peer dependencies. Ensure these are also installed in your project:
@@ -75,7 +75,7 @@ yarn add react react-dom @mui/material @emotion/styled
 
 ```jsx
 import React from 'react';
-import SponsorBanner from 'react-sponsor-banner';
+import SponsorBanner from '@sadhus/react-sponsor-banner';
 
 const sponsors = [
   { src: "/logos/adobe.png", url: "https://www.adobe.com/", alt: "Adobe", tier: "platinum" },
@@ -112,7 +112,7 @@ export default App;
 
 ```jsx
 import React from 'react';
-import SponsorBanner from 'react-sponsor-banner';
+import SponsorBanner from '@sadhus/react-sponsor-banner';
 
 const sponsors = [
   { src: "/logos/adobe.png", url: "https://www.adobe.com/", alt: "Adobe", tier: "platinum" },
