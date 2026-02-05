@@ -3,17 +3,16 @@ import React, { useMemo } from "react";
 
 
 export default function SponsorMarquee({
-  sponsors,
-  speed = 60,
+  className,
   direction = "left",
+  fontSize = '0.875rem',
   gap,
   maxHeight,
-  className,
-  showTierLabels = false,
+  speed = 60,
   separator = "|",
   showSponsorNames = false,
-  fontFamily,
-  fontSize = '0.875rem',
+  showTierLabels = false,
+  sponsors,
 }) {
   
   // Group sponsors by tier
@@ -119,7 +118,7 @@ export default function SponsorMarquee({
             <div key={i} className={s.url ? "rsb-link" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
               {imgEl}
               {showSponsorNames && s.alt && (
-                <span style={{ fontSize: fontSize, fontFamily: fontFamily, color: '#666', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                <span style={{ fontSize: fontSize, color: '#666', textAlign: 'center', whiteSpace: 'nowrap' }}>
                   {s.alt}
                 </span>
               )}

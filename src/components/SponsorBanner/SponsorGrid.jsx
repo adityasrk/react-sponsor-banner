@@ -5,18 +5,17 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
 export default function SponsorGrid({
-  sponsors,
+  className,
   columns,
+  fontSize = '0.875rem',
   gap,
   maxHeight,
   onLogoClick,
   responsive = true,
-  className,
+  sponsors,
+  showSponsorNames = false,
   showTierTabs,
   tierOrder = [],
-  showSponsorNames = false,
-  fontFamily,
-  fontSize = '0.875rem',
 }) {
   const [selectedTab, setSelectedTab] = useState(0);
 
@@ -91,7 +90,7 @@ export default function SponsorGrid({
       <div key={i} className={s.url ? "rsb-link" : ""} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
         {imgEl}
         {showSponsorNames && s.alt && (
-          <span style={{ fontSize: fontSize, fontFamily: fontFamily, color: '#666', textAlign: 'center', whiteSpace: 'nowrap' }}>
+          <span style={{ fontSize: fontSize, color: '#666', textAlign: 'center', whiteSpace: 'nowrap' }}>
             {s.alt}
           </span>
         )}

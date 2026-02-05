@@ -6,30 +6,27 @@ import { sortSponsorsByTier } from "../../utils/tierSort";
 import "./styles.css";
 
 export default function SponsorBanner({
-  sponsors,
-  layout,
-  className,
-  style,
-  maxHeight,
-  gap = 16,
-  borderRadius = 12,
-  padding = 12,
-  
   backgroundColor = "transparent",
+  borderRadius = 12,
+  className,
+  columns,
+  direction = "left",
   fontFamily,
   fontSize,
-  columns,
+  gap = 16,
+  layout,
+  maxHeight,
+  padding = 12,
   responsive = true,
-
-  speed = 60,
-  direction = "left",
-
-  sortByTier = false,
-  tierOrder,
+  separator = "|",
   showTierLabels = false,
   showTierTabs = false,
-  separator = "|",
   showSponsorNames = false,
+  sortByTier = false,
+  speed = 60,
+  sponsors,
+  style,
+  tierOrder,
 }) {
   const data = useMemo(
     () => (sortByTier ? sortSponsorsByTier(sponsors, tierOrder) : sponsors),
@@ -37,6 +34,7 @@ export default function SponsorBanner({
   );
 
   const containerStyle = {
+    fontFamily,
     backgroundColor,
     borderRadius,
     padding,
@@ -53,31 +51,29 @@ export default function SponsorBanner({
         <div className="rsb-inner" role="region" aria-label="Sponsors">
           {layout === "grid" && (
             <SponsorGrid
-              sponsors={data}
               columns={columns}
-              fontFamily={fontFamily}
               fontSize={fontSize}
               gap={gap}
               maxHeight={maxHeight}
               responsive={responsive}
-              tierOrder={tierOrder}
-              showTierTabs={showTierTabs}
               showSponsorNames={showSponsorNames}
+              showTierTabs={showTierTabs}
+              sponsors={data}
+              tierOrder={tierOrder}
             />
           )}
 
           {layout === "marquee" && (
             <SponsorMarquee
-              sponsors={data}
-              speed={speed}
               direction={direction}
+              fontSize={fontSize}
               gap={gap}
               maxHeight={maxHeight}
               separator={separator}
-              showTierLabels={showTierLabels}
+              speed={speed}
               showSponsorNames={showSponsorNames}
-              fontFamily={fontFamily}
-              fontSize={fontSize}
+              showTierLabels={showTierLabels}
+              sponsors={data}
             />
           )}
         </div>

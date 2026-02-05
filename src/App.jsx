@@ -29,26 +29,26 @@ const sponsors = [
 
 const Grid = {
   args: {
-    columns: sponsors.length,
     backgroundColor: "#f7f7f7", // optional
-    fontFamily: "Arial, sans-serif", // optional
+    columns: sponsors.length,
+    fontFamily: "Roboto, Helvetica, Arial, sans-serif", // optional
     fontSize: 14, // optional
     gap: 24, // optional
     layout: "grid",
     maxHeight: "fit-content",
     sortByTier: true,
     sponsors,
-    showSponsorNames: true, // optional
-    showTierTabs: false, // optional
+    showSponsorNames: false, // optional
+    showTierTabs: true, // optional
     tierOrder: ["platinum", "gold", "silver", "bronze"]
   },
 };
 
 const Marquee = {
   args: {
-    backgroundColor: "#fafafa",
+    backgroundColor: "#fafafa", // optional
     direction: "left", // optional
-    fontFamily: "Arial, sans-serif", // optional
+    fontFamily: "Roboto, Helvetica, Arial, sans-serif", // optional
     fontSize: 14, // optional
     gap: 80, // optional
     layout: "marquee",
@@ -64,7 +64,7 @@ const Marquee = {
 
   return (
     <SponsorBanner
-      {...Grid.args} />
+      {...Marquee.args} />
   );
 }
 
