@@ -14,6 +14,34 @@ A versatile and customizable React Sponsor Banner component built with Material-
 - **Responsive Grid**: Automatically adapts to different screen sizes with customizable columns
 - **Lightweight**: Minimal dependencies with optimized performance
 
+## Screenshots/media
+
+### Grid 
+
+Grid without tier classification
+![Grid without tier classification](./sample-media/rsp-grid-without-tier.png)
+
+Grid with tier classification
+![Grid with tier classification](./sample-media/rsp-grid-with-tier-1.png)
+![Grid with tier classification](./sample-media/rsp-grid-with-tier-2.png)
+
+Grid without sponsor name
+![Grid without sponsor name](./sample-media/rsp-grid-without-sponsor-names.png)
+
+Grid with tier without sponsor name
+![Grid with tier without sponsor name](./sample-media/rsp-grid-with-tier-without-sponsor-name.png)
+
+### Marquee
+
+Marquee with tier, with sponsor name
+[Marquee with tier, with sponsor name](./sample-media/rsp-marquee-with-tier-and-names.mp4)
+
+Marquee without tier, with sponsor name
+[Marquee without tier, with sponsor name](./sample-media/rsp-marquee-without-tier-and-names.mp4)
+
+Marquee with tier, without sponsor name
+[Marquee with tier, without sponsor name](./sample-media/rsp-marquee-with-tier-and-without-names.mp4)
+
 ## 🚀 Installation
 
 First, install the package in your React project:
@@ -59,19 +87,19 @@ const sponsors = [
 function App() {
   return (
     <SponsorBanner
-      sponsors={sponsors}
-      layout="grid"
-      columns={5}
-      sortByTier={true}
-      tierOrder={["platinum", "gold", "silver", "bronze"]}
-      showTierTabs={false}
-      showSponsorNames={true}
       backgroundColor="#f7f7f7"
-      gap={24}
       borderRadius={12}
-      padding={12}
+      columns={5}
+      gap={24}
+      layout="grid"
       maxHeight="100px"
+      padding={12}
       responsive={true}
+      showSponsorNames={true}
+      showTierTabs={false}
+      sortByTier={true}
+      sponsors={sponsors}
+      tierOrder={["platinum", "gold", "silver", "bronze"]}
     />
   );
 }
@@ -95,16 +123,16 @@ const sponsors = [
 function App() {
   return (
     <SponsorBanner
-      sponsors={sponsors}
-      layout="marquee"
-      speed={50}
-      direction="left"
-      showTierLabels={true}
-      showSponsorNames={true}
-      separator="|"
       backgroundColor="#fafafa"
+      direction="left"
       gap={80}
+      layout="marquee"
       maxHeight="100px"
+      separator="|"
+      showSponsorNames={true}
+      showTierLabels={true}
+      speed={50}
+      sponsors={sponsors}
     />
   );
 }
@@ -116,20 +144,20 @@ export default App;
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `sponsors` | `Array<{src: string, url?: string, alt?: string, tier?: string}>` | **Required** | Array of sponsor objects. Each sponsor should have `src` (image URL), optional `url` (click destination), `alt` (image alt text), and `tier` (sponsor tier). |
-| `layout` | `"grid" \| "marquee"` | **Required** | Layout mode - either grid or marquee. |
-| `className` | `string` | `""` | Additional CSS class for the container. |
-| `style` | `object` | `{}` | Additional inline styles for the container. |
-| `maxHeight` | `string \| number` | `undefined` | Maximum height for sponsor logos. |
-| `gap` | `number \| string` | `16` | Gap between sponsor items (in px or any CSS unit). |
-| `borderRadius` | `number` | `12` | Border radius of the container (in px). |
-| `padding` | `number` | `12` | Padding inside the container (in px). |
 | `backgroundColor` | `string` | `"transparent"` | Background color of the container. |
-| `fontFamily` | `string` | `undefined` | Font family for sponsor names and tier labels. |
+| `borderRadius` | `number` | `12` | Border radius of the container (in px). |
+| `className` | `string` | `""` | Additional CSS class for the container. |
+| `fontFamily` | `string` | `undefined` | Font family for the entire component (applied at container level). |
 | `fontSize` | `string` | `"0.875rem"` | Font size for sponsor names and tier labels. |
-| `sortByTier` | `boolean` | `false` | Whether to sort sponsors by tier. |
-| `tierOrder` | `Array<string>` | `[]` | Order of tiers (e.g., `["platinum", "gold", "silver"]`). |
+| `gap` | `number \| string` | `16` | Gap between sponsor items (in px or any CSS unit). |
+| `layout` | `"grid" \| "marquee"` | **Required** | Layout mode - either grid or marquee. |
+| `maxHeight` | `string \| number` | `undefined` | Maximum height for sponsor logos. |
+| `padding` | `number` | `12` | Padding inside the container (in px). |
 | `showSponsorNames` | `boolean` | `false` | Whether to display sponsor names below logos. |
+| `sortByTier` | `boolean` | `false` | Whether to sort sponsors by tier. |
+| `sponsors` | `Array<{src: string, url?: string, alt?: string, tier?: string}>` | **Required** | Array of sponsor objects. Each sponsor should have `src` (image URL), optional `url` (click destination), `alt` (image alt text), and `tier` (sponsor tier). |
+| `style` | `object` | `{}` | Additional inline styles for the container. |
+| `tierOrder` | `Array<string>` | `[]` | Order of tiers (e.g., `["platinum", "gold", "silver"]`). |
 
 ### Grid-Specific Props
 
@@ -143,10 +171,10 @@ export default App;
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `speed` | `number` | `60` | Speed of marquee animation (higher = faster). |
 | `direction` | `"left" \| "right"` | `"left"` | Direction of marquee scrolling. |
-| `showTierLabels` | `boolean` | `false` | Show tier labels in the marquee. |
 | `separator` | `string` | `"\|"` | Separator character between tier groups. |
+| `showTierLabels` | `boolean` | `false` | Show tier labels in the marquee. |
+| `speed` | `number` | `60` | Speed of marquee animation (higher = faster). |
 
 ## 📋 Sponsor Object Structure
 
@@ -178,17 +206,17 @@ The component comes with default styles but is highly customizable:
 
 ```jsx
 <SponsorBanner
-  sponsors={sponsors}
-  layout="grid"
+  backgroundColor="#ffffff"
+  borderRadius={16}
   className="my-custom-banner"
+  gap={32}
+  layout="grid"
+  padding={24}
+  sponsors={sponsors}
   style={{
     boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
     border: "1px solid #e0e0e0"
   }}
-  backgroundColor="#ffffff"
-  gap={32}
-  borderRadius={16}
-  padding={24}
 />
 ```
 
@@ -229,14 +257,14 @@ yarn build
 
 ```jsx
 <SponsorBanner
-  sponsors={sponsors}
-  layout="grid"
   columns={4}
-  sortByTier={true}
-  tierOrder={["platinum", "gold", "silver", "bronze"]}
-  showTierTabs={true}
-  showSponsorNames={true}
+  layout="grid"
   responsive={true}
+  showSponsorNames={true}
+  showTierTabs={true}
+  sortByTier={true}
+  sponsors={sponsors}
+  tierOrder={["platinum", "gold", "silver", "bronze"]}
 />
 ```
 
@@ -244,13 +272,13 @@ yarn build
 
 ```jsx
 <SponsorBanner
-  sponsors={sponsors}
-  layout="marquee"
-  speed={40}
   direction="left"
-  showTierLabels={true}
-  separator="●"
   gap={100}
+  layout="marquee"
+  separator="●"
+  showTierLabels={true}
+  speed={40}
+  sponsors={sponsors}
 />
 ```
 
@@ -258,11 +286,11 @@ yarn build
 
 ```jsx
 <SponsorBanner
-  sponsors={sponsors}
-  layout="grid"
   columns={6}
   gap={16}
+  layout="grid"
   maxHeight="80px"
+  sponsors={sponsors}
 />
 ```
 
