@@ -21,7 +21,10 @@ export default defineConfig({
           '@emotion/styled': 'styled'
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.names[0] === 'style.css') return 'style.css';
+          // Force all CSS assets to be named 'style.css'
+          if (assetInfo.names && assetInfo.names[0]?.endsWith('.css')) {
+            return 'style.css';
+          }
           return assetInfo.names[0];
         },
         inlineDynamicImports: false
