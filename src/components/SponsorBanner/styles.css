@@ -1,0 +1,118 @@
+
+:root {
+  --rsb-gap: 16px;
+}
+
+.rsb-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.rsb-inner {
+  display: block;
+  overflow: hidden;
+}
+
+.rsb-grid {
+  display: grid;
+  gap: var(--rsb-gap);
+  align-items: center;
+  justify-items: center;
+}
+
+.rsb-grid img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: saturate(0.85) contrast(1);
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.rsb-marquee img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  filter: saturate(0.85) contrast(1);
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.rsb-link:hover img,
+.rsb-link:focus img {
+  filter: saturate(1) contrast(1.05);
+  transform: translateY(-1px);
+}
+
+.rsb-link {
+  outline: none;
+  border-radius: 6px;
+}
+
+.rsb-track {
+  display: flex;
+  will-change: transform;
+  transition: transform 400ms ease;
+}
+
+.rsb-slide {
+  flex: 0 0 100%;
+  display: grid;
+  place-items: center;
+}
+
+.rsb-arrows {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.rsb-arrow-btn {
+  pointer-events: auto;
+  border: none;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.rsb-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.rsb-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #c5c5c5;
+  border: none;
+}
+.rsb-dot.active {
+  background: #111;
+}
+
+.rsb-marquee {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rsb-marquee-track {
+  display: flex;
+  gap: var(--rsb-gap);
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.rsb-marquee:hover .rsb-marquee-track[data-pause-on-hover="true"] {
+  animation-play-state: paused;
+}

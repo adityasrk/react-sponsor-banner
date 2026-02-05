@@ -1,0 +1,19 @@
+
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6B73FF"/>
+      <stop offset="100%" stop-color="#000DFF"/>
+    </linearGradient>
+  </defs>
+  <rect rx="32" width="256" height="256" fill="url(#g)"/>
+  <g transform="translate(24,24)">
+    <rect x="0" y="64" width="208" height="24" rx="12" fill="white" opacity="0.9"/>
+    <circle cx="24" cy="76" r="12" fill="#111" opacity="0.9"/>
+    <circle cx="64" cy="76" r="12" fill="#111" opacity="0.9"/>
+    <circle cx="104" cy="76" r="12" fill="#111" opacity="0.9"/>
+    <text x="12" y="156" font-family="Inter, Arial" font-size="28" fill="white" opacity="0.95">
+      Sponsor Banner
+    </text>
+  </g>
+</svg>
