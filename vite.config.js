@@ -23,9 +23,11 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           if (assetInfo.names[0] === 'style.css') return 'style.css';
           return assetInfo.names[0];
-        }
+        },
+        inlineDynamicImports: false
       }
     },
-    cssCodeSplit: false
+    cssCodeSplit: false,
+    cssMinify: true
   }
 })

@@ -71,11 +71,18 @@ yarn add react react-dom @mui/material @emotion/styled
 
 ## 💡 Usage
 
+**Important:** You must import the CSS file for the component to display correctly:
+
+```jsx
+import '@sadhus/react-sponsor-banner/style.css';
+```
+
 ### Grid Layout Example
 
 ```jsx
 import React from 'react';
 import SponsorBanner from '@sadhus/react-sponsor-banner';
+import '@sadhus/react-sponsor-banner/style.css';
 
 const sponsors = [
   { src: "/logos/adobe.png", url: "https://www.adobe.com/", alt: "Adobe", tier: "platinum" },
@@ -113,6 +120,7 @@ export default App;
 ```jsx
 import React from 'react';
 import SponsorBanner from '@sadhus/react-sponsor-banner';
+import '@sadhus/react-sponsor-banner/style.css';
 
 const sponsors = [
   { src: "/logos/adobe.png", url: "https://www.adobe.com/", alt: "Adobe", tier: "platinum" },

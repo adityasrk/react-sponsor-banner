@@ -1,6 +1,6 @@
 {
   "name": "@sadhus/react-sponsor-banner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A versatile and customizable React Sponsor Banner component built with Material-UI, featuring grid and marquee layouts, tier-based organization, and flexible styling options.",
   "type": "module",
   "main": "./dist/react-sponsor-banner.umd.js",
