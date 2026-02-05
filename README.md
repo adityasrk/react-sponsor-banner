@@ -34,22 +34,14 @@ Grid with tier without sponsor name
 ### Marquee
 
 Marquee with tier, with sponsor name
-<br/>
-<video width="320" height="240" controls>
-  <source src="./sample-media/rsp-marquee-with-tier-and-names.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/7651ef90-8d95-45e4-aa64-32793b39ed68
 
 Marquee without tier, with sponsor name
-<br/>
-<video width="320" height="240" controls>
-  <source src="./sample-media/rsp-marquee-without-tier-and-names.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/b56a59c1-eade-41ec-b0ec-c71fed8aadcc
 
 Marquee with tier, without sponsor name
-<br/>
-<video width="320" height="240" controls>
-  <source src="./sample-media/rsp-marquee-with-tier-and-without-names.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/e9fa1ae5-2094-4bee-9a82-e1814035e0c3
+
 
 ## 🚀 Installation
 
