@@ -3,10 +3,30 @@
   --rsb-gap: 16px;
 }
 
+/* Responsive gap adjustments */
+@media (max-width: 480px) {
+  :root {
+    --rsb-gap: 8px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --rsb-gap: 12px;
+  }
+}
+
 .rsb-container {
   width: 100%;
   box-sizing: border-box;
   display: block;
+}
+
+/* Responsive padding for smaller screens */
+@media (max-width: 768px) {
+  .rsb-container {
+    padding: 8px !important;
+  }
 }
 
 .rsb-inner {
@@ -19,6 +39,25 @@
   gap: var(--rsb-gap);
   align-items: center;
   justify-items: center;
+}
+
+/* Mobile-first responsive grid */
+@media (max-width: 480px) {
+  .rsb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .rsb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .rsb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+  }
 }
 
 .rsb-grid img {
@@ -115,4 +154,84 @@
 
 .rsb-marquee:hover .rsb-marquee-track[data-pause-on-hover="true"] {
   animation-play-state: paused;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .rsb-marquee-track {
+    gap: calc(var(--rsb-gap) * 0.5);
+  }
+  
+  .rsb-marquee img {
+    max-width: 80px;
+  }
+}
+
+/* Responsive font sizes */
+@media (max-width: 480px) {
+  .rsb-grid span,
+  .rsb-marquee span {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Smaller tabs on mobile */
+  .rsb-container .MuiTab-root {
+    min-width: 60px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .rsb-grid span,
+  .rsb-marquee span {
+    font-size: 0.8125rem !important;
+  }
+  
+  .rsb-container .MuiTab-root {
+    min-width: 80px;
+    padding: 10px 16px;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Ensure sponsor names wrap properly on mobile */
+@media (max-width: 768px) {
+  .rsb-grid > div > span,
+  .rsb-marquee > div > span {
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100px;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .rsb-link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .rsb-link:active img {
+    filter: saturate(1) contrast(1.05);
+    transform: scale(0.98);
+  }
+}
+
+/* Responsive tier labels */
+@media (max-width: 768px) {
+  .rsb-tier-label,
+  .rsb-tier-separator {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ensure proper overflow handling on mobile */
+@media (max-width: 768px) {
+  .rsb-marquee {
+    overflow-x: hidden;
+  }
+  
+  .rsb-inner {
+    overflow-x: hidden;
+  }
 }

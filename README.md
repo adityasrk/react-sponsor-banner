@@ -10,8 +10,9 @@ A versatile and customizable React Sponsor Banner component built with Material-
 - **Marquee Animation**: Smooth scrolling marquee with configurable speed and direction
 - **Clickable Sponsors**: Each sponsor logo can link to external URLs
 - **Sponsor Names Display**: Optional sponsor name labels below logos
+- **Fully Responsive**: Automatically adapts to mobile, tablet, and desktop screens with optimized layouts
+- **Mobile-Optimized**: Touch-friendly interactions and responsive typography
 - **Customizable Styling**: Control colors, spacing, fonts, borders, and more
-- **Responsive Grid**: Automatically adapts to different screen sizes with customizable columns
 - **Lightweight**: Minimal dependencies with optimized performance
 
 ## Screenshots/media
@@ -229,7 +230,30 @@ The component comes with default styles but is highly customizable:
 />
 ```
 
-## 🛠️ Development
+## � Responsive Behavior
+
+The component is fully responsive and automatically adapts to different screen sizes:
+
+### Grid Layout Breakpoints
+
+- **Mobile (≤480px)**: Auto-fit grid with minimum 80px columns
+- **Tablet (481px-768px)**: Auto-fit grid with minimum 100px columns
+- **Desktop (769px-1024px)**: Auto-fit grid with minimum 120px columns
+- **Large Desktop (>1024px)**: Uses your specified `columns` prop
+
+### Responsive Adjustments
+
+- **Gap spacing**: Automatically reduces on smaller screens (16px → 12px → 8px)
+- **Typography**: Font sizes scale down for better readability on mobile
+- **Padding**: Container padding reduces to 8px on mobile devices
+- **Touch interactions**: Optimized tap targets and touch feedback on mobile devices
+- **Marquee**: Logo sizes and spacing adjust for smaller screens
+
+### Mobile-First Design
+
+The component uses CSS media queries to ensure optimal display across all devices. No additional configuration needed - it just works!
+
+## �🛠️ Development
 
 To set up the development environment:
 
@@ -302,6 +326,18 @@ yarn build
   sponsors={sponsors}
 />
 ```
+
+## 📝 Important Notes
+
+**Image Size Recommendations:**
+- All sponsor logos/icons should be of **similar dimensions** for a consistent and professional appearance
+- Use **smaller, optimized images** (recommended: 100-200px in height) for better performance and visual balance
+- Ensure images have **transparent backgrounds** (PNG format recommended) for seamless integration
+- **Square or similar aspect ratios** work best for grid layouts
+- **Horizontal logos** (wider than tall) are ideal for marquee layouts
+- Compress images to reduce file size without compromising quality
+
+Following these guidelines will ensure your sponsor banner looks great across all layouts and devices!
 
 ## 🤝 Contributing
 
