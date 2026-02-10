@@ -1,6 +1,6 @@
 {
   "name": "@sadhus/react-sponsor-banner",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A versatile and customizable React Sponsor Banner component built with Material-UI, featuring grid and marquee layouts, tier-based organization, and flexible styling options.",
   "type": "module",
   "main": "./dist/react-sponsor-banner.umd.js",
@@ -56,16 +56,18 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0 || ^6.0.0 || ^7.0.0",
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
-    "@emotion/styled": "^11.14.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@mui/material": "^7.3.7",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.1.1",
     "globals": "^16.5.0",
     "react": "^19.2.0",

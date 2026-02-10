@@ -58,16 +58,16 @@ or
 yarn add @sadhus/react-sponsor-banner
 ```
 
-This component relies on `react`, `react-dom`, `@mui/material`, and `@emotion/styled` as peer dependencies. Ensure these are also installed in your project:
+This component relies on `react`, `react-dom`, `@mui/material`, `@emotion/react`, and `@emotion/styled` as peer dependencies. Ensure these are also installed in your project:
 
 ```bash
-npm install react react-dom @mui/material @emotion/styled
+npm install react react-dom @mui/material @emotion/react @emotion/styled
 ```
 
 or
 
 ```bash
-yarn add react react-dom @mui/material @emotion/styled
+yarn add react react-dom @mui/material @emotion/react @emotion/styled
 ```
 
 ## 💡 Usage

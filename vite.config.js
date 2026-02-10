@@ -12,12 +12,21 @@ export default defineConfig({
       fileName: (format) => `react-sponsor-banner.${format}.js`
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@mui/material', '@emotion/styled'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        '@mui/material',
+        '@emotion/react',
+        '@emotion/styled'
+      ],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'react/jsx-runtime',
           '@mui/material': 'MaterialUI',
+          '@emotion/react': 'emotionReact',
           '@emotion/styled': 'styled'
         },
         assetFileNames: (assetInfo) => {
